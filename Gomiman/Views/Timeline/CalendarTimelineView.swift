@@ -40,7 +40,7 @@ public struct CalendarTimelineView: View {
                     }
                 }
 
-                BannerAdPlaceholderView(adUnitId: AdConstants.getTimelineBannerUnitId())
+                BannerAdView(adUnitId: AdConstants.getTimelineBannerUnitId())
                     .padding(.vertical, 4)
             }
             .background(Color.white)

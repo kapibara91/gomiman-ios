@@ -1,11 +1,18 @@
 import SwiftUI
 import UserNotifications
+#if canImport(GoogleMobileAds)
+import GoogleMobileAds
+#endif
 
 @main
 struct GomimanApp: App {
     @State private var viewModel = GarbageViewModel()
 
     init() {
+        #if canImport(GoogleMobileAds)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        #endif
+
         // Configure native navigation bar appearance to match clean white styling
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()

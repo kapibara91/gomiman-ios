@@ -31,7 +31,7 @@ public struct GarbageListView: View {
                     }
                 }
 
-                BannerAdPlaceholderView(adUnitId: AdConstants.getCollectionBannerUnitId())
+                BannerAdView(adUnitId: AdConstants.getCollectionBannerUnitId())
                     .padding(.vertical, 4)
             }
             .background(Color.white)

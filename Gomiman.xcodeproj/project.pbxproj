@@ -25,7 +25,7 @@
 		4EAEC2ACBEF6CF7B4CCEC369 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A03003FCA8016363FB7003C /* MainTabView.swift */; };
 		2658B8914BA337551C858078 /* GarbageTypeBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D55FE0585E0031CFD5C93C /* GarbageTypeBadgeView.swift */; };
 		F380DA0484ACB088155764B6 /* SelectablePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B7970FCDF2B2408506F48 /* SelectablePillView.swift */; };
-		6724DF3224400B4A15F4E1DD /* BannerAdPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A0CD67F36E53E1D0DDD20D /* BannerAdPlaceholderView.swift */; };
+		5D830A63CAC5B0777D30CEA8 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F48192FAD91A931621AB008 /* BannerAdView.swift */; };
 		4882A605A3020DF0E547FE6B /* CalendarTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC239FB151BAFF2FB42A8B /* CalendarTimelineView.swift */; };
 		9D359F2EF5AE12F5D32CDA12 /* GarbageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E7F31ED68559883D3A66A /* GarbageListView.swift */; };
 		7DEBCEEFECFC7B411AD9CD4B /* GarbageAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E85F87E8B778595BF290CB /* GarbageAddView.swift */; };
@@ -35,6 +35,7 @@
 		18608C3002A8AFB851BB25C9 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C4F556C729F5DD0E1ED95 /* FeedbackView.swift */; };
 		B5FC8D7B4AF767E57A63FB48 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D879FDF7CD3605765D1490E /* EventKit.framework */; };
 		2FEF67C67E97BD04AEE7B9E1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDAFC4D0C5212A785C19DB0 /* UserNotifications.framework */; };
+		D5AC91CEF96A6D54D46B6E00 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 99D825E4A2C569EA242F083A /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,7 @@
 		6A03003FCA8016363FB7003C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabView.swift"; sourceTree = "<group>"; };
 		49D55FE0585E0031CFD5C93C /* GarbageTypeBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageTypeBadgeView.swift"; sourceTree = "<group>"; };
 		411B7970FCDF2B2408506F48 /* SelectablePillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectablePillView.swift"; sourceTree = "<group>"; };
-		A4A0CD67F36E53E1D0DDD20D /* BannerAdPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BannerAdPlaceholderView.swift"; sourceTree = "<group>"; };
+		5F48192FAD91A931621AB008 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BannerAdView.swift"; sourceTree = "<group>"; };
 		EFFC239FB151BAFF2FB42A8B /* CalendarTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarTimelineView.swift"; sourceTree = "<group>"; };
 		7C9E7F31ED68559883D3A66A /* GarbageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageListView.swift"; sourceTree = "<group>"; };
 		64E85F87E8B778595BF290CB /* GarbageAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageAddView.swift"; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 			files = (
 				B5FC8D7B4AF767E57A63FB48 /* EventKit.framework in Frameworks */,
 				2FEF67C67E97BD04AEE7B9E1 /* UserNotifications.framework in Frameworks */,
+				D5AC91CEF96A6D54D46B6E00 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +171,7 @@
 			children = (
 				49D55FE0585E0031CFD5C93C,
 				411B7970FCDF2B2408506F48,
-				A4A0CD67F36E53E1D0DDD20D,
+				5F48192FAD91A931621AB008,
 			);
 			path = "Components";
 			sourceTree = "<group>";
@@ -261,6 +263,9 @@
 			dependencies = (
 			);
 			name = Gomiman;
+			packageProductDependencies = (
+				99D825E4A2C569EA242F083A /* GoogleMobileAds */,
+			);
 			productName = Gomiman;
 			productReference = 14EFBA0865F67669E2D4717B /* Gomiman.app */;
 			productType = "com.apple.product-type.application";
@@ -290,6 +295,9 @@
 				Base,
 			);
 			mainGroup = D1B1EAB6D5D05400855725A2;
+			packageReferences = (
+				530806C85F68727FE6FEA02C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = B879358E0122ADB25F226773 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,7 +340,7 @@
 				4EAEC2ACBEF6CF7B4CCEC369 /* MainTabView.swift in Sources */,
 				2658B8914BA337551C858078 /* GarbageTypeBadgeView.swift in Sources */,
 				F380DA0484ACB088155764B6 /* SelectablePillView.swift in Sources */,
-				6724DF3224400B4A15F4E1DD /* BannerAdPlaceholderView.swift in Sources */,
+				5D830A63CAC5B0777D30CEA8 /* BannerAdView.swift in Sources */,
 				4882A605A3020DF0E547FE6B /* CalendarTimelineView.swift in Sources */,
 				9D359F2EF5AE12F5D32CDA12 /* GarbageListView.swift in Sources */,
 				7DEBCEEFECFC7B411AD9CD4B /* GarbageAddView.swift in Sources */,
@@ -344,6 +352,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		530806C85F68727FE6FEA02C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99D825E4A2C569EA242F083A /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 530806C85F68727FE6FEA02C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AC2BF1911B8C061B5D76E70B /* Debug */ = {
