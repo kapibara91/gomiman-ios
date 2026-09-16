@@ -3,16 +3,50 @@ import UserNotifications
 #if canImport(GoogleMobileAds)
 import GoogleMobileAds
 #endif
+#if canImport(FirebaseCore)
+import FirebaseCore
+#endif
+#if canImport(FirebaseMessaging)
+import FirebaseMessaging
+#endif
 
-@main
-struct GomimanApp: App {
-    @State private var viewModel = GarbageViewModel()
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    ) -> Bool {
+        #if canImport(FirebaseCore)
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
+        #endif
 
-    init() {
+        AppCheckManager.shared.initialize()
+        FCMManager.shared.configure()
+
         #if canImport(GoogleMobileAds)
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         #endif
 
+        return true
+    }
+
+    func application(
+        _ application: UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
+        #if canImport(FirebaseMessaging)
+        Messaging.messaging().apnsToken = deviceToken
+        #endif
+    }
+}
+
+@main
+struct GomimanApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @State private var viewModel = GarbageViewModel()
+
+    init() {
         // Configure native navigation bar appearance to match clean white styling
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -29,7 +63,9 @@ struct GomimanApp: App {
                 .onAppear {
                     viewModel.loadData()
                     Task {
-                        _ = await NotificationManager.shared.requestAuthorization()
+                        // Sync base device metadata to Firestore on launch (matching Android GomimanApp)
+                        // Notification permission is explicitly NOT requested here.
+                        _ = await CloudRunSyncService.shared.syncBaseInfo()
                     }
                 }
         }

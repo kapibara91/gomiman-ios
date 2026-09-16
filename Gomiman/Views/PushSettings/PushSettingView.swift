@@ -97,16 +97,15 @@ public struct PushSettingView: View {
                 .font(.system(size: 15, weight: .bold))
             }
         }
-        .onAppear {
+        .task {
             let setting = viewModel.pushSetting
             collectionDayBefore = setting.collectionDayBefore
             selectedTimeDayBefore = setting.selectedTimeDayBefore
             collectionDayAfter = setting.collectionDayAfter
             selectedTimeDayAfter = setting.selectedTimeDayAfter
 
-            Task {
-                _ = await NotificationManager.shared.requestAuthorization()
-            }
+            // Explicitly request push permission and register for remote notifications ONLY on entering this screen
+            _ = await FCMManager.shared.requestPushPermissionAndRegister()
         }
     }
 
