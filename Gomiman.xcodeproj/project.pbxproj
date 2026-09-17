@@ -7,79 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A777CFA0271C4E6F4DC32D8 /* GomimanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA22E054525310896BEA74 /* GomimanApp.swift */; };
-		2463603DE948F8BCA5692F78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 999421A664F6B9476F9A19A9 /* GoogleService-Info.plist */; };
-		96B4536E9DF2DEE4DA6A006A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E2C10C99C3AE255D026823 /* Assets.xcassets */; };
-		8FC00D66679372A347CBFDFB /* GarbageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F37F945E25823D66C8D7C6 /* GarbageType.swift */; };
-		DE95CDCC60BAB9E0D147AAE2 /* GarbageCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAD4F3107CB41AB61059438 /* GarbageCollectionModel.swift */; };
-		51D4272248E290E620DF40B5 /* PushSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BCA6A9F01272BE25E0D3A /* PushSettingModel.swift */; };
-		4F935042BAA75302165419DA /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5CBFB183B8DA5E1F07E500 /* UserInfoModel.swift */; };
-		267BEC6C1DFFFFA4F8CDA510 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A85A94B775B26FC8BAEA88 /* TimelineItem.swift */; };
-		9002722458DE4E812DC50619 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14743A110C85F4A545B6FF9 /* DateUtils.swift */; };
-		19FBAC5CA4FE897B76F61C4D /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02DC0C9AA45657003A1D176 /* Color+Theme.swift */; };
-		AD7521134C819AB26D1742EA /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0161BD24D3BFE169683DDA /* PreferencesManager.swift */; };
 		0A7B753D744C132A32F128BD /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7681432E3F0558B8EE5AC0 /* CalendarManager.swift */; };
 		0AC93CC88779F1B0655CEC2E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDED3A45AF22C56EE6CAFD /* NotificationManager.swift */; };
-		44D56BE613A258E0E4762B01 /* UserInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE91BEA0944EC8DF53DB7F0 /* UserInfoCollector.swift */; };
-		EF70D701F8D5968692BF6202 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FE271A6BDBBC1AB4FE28F /* SyncService.swift */; };
-		902A754A749513C6191A32D4 /* AppCheckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40879335C3587573CC16A40C /* AppCheckManager.swift */; };
-		41598E765DEE855F4B141F12 /* FirestoreSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CAC9832712327DECE90F63 /* FirestoreSyncService.swift */; };
-		BBCF0EFCE676A9DB5C5FAEBD /* FCMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B865E25F96250540DA4D3 /* FCMManager.swift */; };
-		E21A0B1F71CA59EB927E4A7A /* GarbageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908529337F2DB468DC2D6751 /* GarbageViewModel.swift */; };
-		4EAEC2ACBEF6CF7B4CCEC369 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A03003FCA8016363FB7003C /* MainTabView.swift */; };
-		2658B8914BA337551C858078 /* GarbageTypeBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D55FE0585E0031CFD5C93C /* GarbageTypeBadgeView.swift */; };
-		F380DA0484ACB088155764B6 /* SelectablePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B7970FCDF2B2408506F48 /* SelectablePillView.swift */; };
-		5D830A63CAC5B0777D30CEA8 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F48192FAD91A931621AB008 /* BannerAdView.swift */; };
-		4882A605A3020DF0E547FE6B /* CalendarTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC239FB151BAFF2FB42A8B /* CalendarTimelineView.swift */; };
-		9D359F2EF5AE12F5D32CDA12 /* GarbageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E7F31ED68559883D3A66A /* GarbageListView.swift */; };
-		7DEBCEEFECFC7B411AD9CD4B /* GarbageAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E85F87E8B778595BF290CB /* GarbageAddView.swift */; };
-		4EBA6738A98ECE166C42E8D1 /* PushSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AFF31D0FA560F1DDA086C /* PushSettingView.swift */; };
-		FE8187330BC1C9076F4FED2B /* CalendarAppendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED5CC8C1A69D1D124ECA0E /* CalendarAppendView.swift */; };
-		840E143800E98BCAA8ECE832 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99616319A02F0032945C85 /* SettingsView.swift */; };
 		18608C3002A8AFB851BB25C9 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C4F556C729F5DD0E1ED95 /* FeedbackView.swift */; };
-		B5FC8D7B4AF767E57A63FB48 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D879FDF7CD3605765D1490E /* EventKit.framework */; };
-		2FEF67C67E97BD04AEE7B9E1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDAFC4D0C5212A785C19DB0 /* UserNotifications.framework */; };
-		D5AC91CEF96A6D54D46B6E00 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 99D825E4A2C569EA242F083A /* GoogleMobileAds */; };
-		74F33CA17994F8AED584CB1D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A868646A77EE5286D677FF14 /* FirebaseFirestore */; };
+		19FBAC5CA4FE897B76F61C4D /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02DC0C9AA45657003A1D176 /* Color+Theme.swift */; };
+		1A777CFA0271C4E6F4DC32D8 /* GomimanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA22E054525310896BEA74 /* GomimanApp.swift */; };
+		2463603DE948F8BCA5692F78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 999421A664F6B9476F9A19A9 /* GoogleService-Info.plist */; };
+		2658B8914BA337551C858078 /* GarbageTypeBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D55FE0585E0031CFD5C93C /* GarbageTypeBadgeView.swift */; };
+		267BEC6C1DFFFFA4F8CDA510 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A85A94B775B26FC8BAEA88 /* TimelineItem.swift */; };
 		2DC1E0CDB06334F75538E4BC /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 0C84B2BAD766C72614C15960 /* FirebaseAppCheck */; };
+		2FEF67C67E97BD04AEE7B9E1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDAFC4D0C5212A785C19DB0 /* UserNotifications.framework */; };
+		41598E765DEE855F4B141F12 /* FirestoreSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CAC9832712327DECE90F63 /* FirestoreSyncService.swift */; };
+		44D56BE613A258E0E4762B01 /* UserInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE91BEA0944EC8DF53DB7F0 /* UserInfoCollector.swift */; };
+		4882A605A3020DF0E547FE6B /* CalendarTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC239FB151BAFF2FB42A8B /* CalendarTimelineView.swift */; };
+		4EAEC2ACBEF6CF7B4CCEC369 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A03003FCA8016363FB7003C /* MainTabView.swift */; };
+		4EBA6738A98ECE166C42E8D1 /* PushSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AFF31D0FA560F1DDA086C /* PushSettingView.swift */; };
+		4F935042BAA75302165419DA /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5CBFB183B8DA5E1F07E500 /* UserInfoModel.swift */; };
+		51D4272248E290E620DF40B5 /* PushSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BCA6A9F01272BE25E0D3A /* PushSettingModel.swift */; };
+		5D830A63CAC5B0777D30CEA8 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F48192FAD91A931621AB008 /* BannerAdView.swift */; };
+		74F33CA17994F8AED584CB1D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A868646A77EE5286D677FF14 /* FirebaseFirestore */; };
+		7DEBCEEFECFC7B411AD9CD4B /* GarbageAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E85F87E8B778595BF290CB /* GarbageAddView.swift */; };
+		840E143800E98BCAA8ECE832 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C99616319A02F0032945C85 /* SettingsView.swift */; };
+		8FC00D66679372A347CBFDFB /* GarbageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F37F945E25823D66C8D7C6 /* GarbageType.swift */; };
+		9002722458DE4E812DC50619 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14743A110C85F4A545B6FF9 /* DateUtils.swift */; };
+		902A754A749513C6191A32D4 /* AppCheckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40879335C3587573CC16A40C /* AppCheckManager.swift */; };
+		96B4536E9DF2DEE4DA6A006A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E2C10C99C3AE255D026823 /* Assets.xcassets */; };
+		9D359F2EF5AE12F5D32CDA12 /* GarbageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E7F31ED68559883D3A66A /* GarbageListView.swift */; };
+		AD7521134C819AB26D1742EA /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0161BD24D3BFE169683DDA /* PreferencesManager.swift */; };
+		B5FC8D7B4AF767E57A63FB48 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D879FDF7CD3605765D1490E /* EventKit.framework */; };
+		BBCF0EFCE676A9DB5C5FAEBD /* FCMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B865E25F96250540DA4D3 /* FCMManager.swift */; };
+		D5AC91CEF96A6D54D46B6E00 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 99D825E4A2C569EA242F083A /* GoogleMobileAds */; };
+		DE95CDCC60BAB9E0D147AAE2 /* GarbageCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAD4F3107CB41AB61059438 /* GarbageCollectionModel.swift */; };
 		E0A0C30F334CB3F59FE8FD28 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7E6F3F0895EB75CFB0829CDE /* FirebaseMessaging */; };
+		E21A0B1F71CA59EB927E4A7A /* GarbageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908529337F2DB468DC2D6751 /* GarbageViewModel.swift */; };
+		EF70D701F8D5968692BF6202 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FE271A6BDBBC1AB4FE28F /* SyncService.swift */; };
+		F380DA0484ACB088155764B6 /* SelectablePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B7970FCDF2B2408506F48 /* SelectablePillView.swift */; };
+		FE8187330BC1C9076F4FED2B /* CalendarAppendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED5CC8C1A69D1D124ECA0E /* CalendarAppendView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EAA22E054525310896BEA74 /* GomimanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GomimanApp.swift"; sourceTree = "<group>"; };
-		F8948D0376E1200AF3F3F429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
-		999421A664F6B9476F9A19A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		99E2C10C99C3AE255D026823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
-		45F37F945E25823D66C8D7C6 /* GarbageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageType.swift"; sourceTree = "<group>"; };
-		9EAD4F3107CB41AB61059438 /* GarbageCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageCollectionModel.swift"; sourceTree = "<group>"; };
-		AA6BCA6A9F01272BE25E0D3A /* PushSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PushSettingModel.swift"; sourceTree = "<group>"; };
-		4B5CBFB183B8DA5E1F07E500 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoModel.swift"; sourceTree = "<group>"; };
-		60A85A94B775B26FC8BAEA88 /* TimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimelineItem.swift"; sourceTree = "<group>"; };
-		A14743A110C85F4A545B6FF9 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateUtils.swift"; sourceTree = "<group>"; };
-		A02DC0C9AA45657003A1D176 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
-		8F0161BD24D3BFE169683DDA /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreferencesManager.swift"; sourceTree = "<group>"; };
-		1E7681432E3F0558B8EE5AC0 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarManager.swift"; sourceTree = "<group>"; };
-		1EEDED3A45AF22C56EE6CAFD /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationManager.swift"; sourceTree = "<group>"; };
-		6DE91BEA0944EC8DF53DB7F0 /* UserInfoCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfoCollector.swift"; sourceTree = "<group>"; };
-		541FE271A6BDBBC1AB4FE28F /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SyncService.swift"; sourceTree = "<group>"; };
-		40879335C3587573CC16A40C /* AppCheckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCheckManager.swift"; sourceTree = "<group>"; };
-		E7CAC9832712327DECE90F63 /* FirestoreSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirestoreSyncService.swift"; sourceTree = "<group>"; };
-		B42B865E25F96250540DA4D3 /* FCMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FCMManager.swift"; sourceTree = "<group>"; };
-		908529337F2DB468DC2D6751 /* GarbageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageViewModel.swift"; sourceTree = "<group>"; };
-		6A03003FCA8016363FB7003C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabView.swift"; sourceTree = "<group>"; };
-		49D55FE0585E0031CFD5C93C /* GarbageTypeBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageTypeBadgeView.swift"; sourceTree = "<group>"; };
-		411B7970FCDF2B2408506F48 /* SelectablePillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectablePillView.swift"; sourceTree = "<group>"; };
-		5F48192FAD91A931621AB008 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BannerAdView.swift"; sourceTree = "<group>"; };
-		EFFC239FB151BAFF2FB42A8B /* CalendarTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarTimelineView.swift"; sourceTree = "<group>"; };
-		7C9E7F31ED68559883D3A66A /* GarbageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageListView.swift"; sourceTree = "<group>"; };
-		64E85F87E8B778595BF290CB /* GarbageAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GarbageAddView.swift"; sourceTree = "<group>"; };
-		394AFF31D0FA560F1DDA086C /* PushSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PushSettingView.swift"; sourceTree = "<group>"; };
-		A4ED5CC8C1A69D1D124ECA0E /* CalendarAppendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarAppendView.swift"; sourceTree = "<group>"; };
-		5C99616319A02F0032945C85 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
-		122C4F556C729F5DD0E1ED95 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedbackView.swift"; sourceTree = "<group>"; };
-		8D879FDF7CD3605765D1490E /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		1FDAFC4D0C5212A785C19DB0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		122C4F556C729F5DD0E1ED95 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		14EFBA0865F67669E2D4717B /* Gomiman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gomiman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E7681432E3F0558B8EE5AC0 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		1EEDED3A45AF22C56EE6CAFD /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		1FDAFC4D0C5212A785C19DB0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		394AFF31D0FA560F1DDA086C /* PushSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSettingView.swift; sourceTree = "<group>"; };
+		3EAA22E054525310896BEA74 /* GomimanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomimanApp.swift; sourceTree = "<group>"; };
+		40879335C3587573CC16A40C /* AppCheckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCheckManager.swift; sourceTree = "<group>"; };
+		411B7970FCDF2B2408506F48 /* SelectablePillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectablePillView.swift; sourceTree = "<group>"; };
+		45F37F945E25823D66C8D7C6 /* GarbageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarbageType.swift; sourceTree = "<group>"; };
+		49D55FE0585E0031CFD5C93C /* GarbageTypeBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarbageTypeBadgeView.swift; sourceTree = "<group>"; };
+		4B5CBFB183B8DA5E1F07E500 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		541FE271A6BDBBC1AB4FE28F /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
+		5C99616319A02F0032945C85 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5F48192FAD91A931621AB008 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		60A85A94B775B26FC8BAEA88 /* TimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineItem.swift; sourceTree = "<group>"; };
+		64E85F87E8B778595BF290CB /* GarbageAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarbageAddView.swift; sourceTree = "<group>"; };
+		6A03003FCA8016363FB7003C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		6DE91BEA0944EC8DF53DB7F0 /* UserInfoCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCollector.swift; sourceTree = "<group>"; };
+		7C9E7F31ED68559883D3A66A /* GarbageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarbageListView.swift; sourceTree = "<group>"; };
+		8D879FDF7CD3605765D1490E /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		8F0161BD24D3BFE169683DDA /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
+		908529337F2DB468DC2D6751 /* GarbageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarbageViewModel.swift; sourceTree = "<group>"; };
+		999421A664F6B9476F9A19A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99E2C10C99C3AE255D026823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9EAD4F3107CB41AB61059438 /* GarbageCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarbageCollectionModel.swift; sourceTree = "<group>"; };
+		A02DC0C9AA45657003A1D176 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		A14743A110C85F4A545B6FF9 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		A4ED5CC8C1A69D1D124ECA0E /* CalendarAppendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAppendView.swift; sourceTree = "<group>"; };
+		AA6BCA6A9F01272BE25E0D3A /* PushSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSettingModel.swift; sourceTree = "<group>"; };
+		B42B865E25F96250540DA4D3 /* FCMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMManager.swift; sourceTree = "<group>"; };
+		E7CAC9832712327DECE90F63 /* FirestoreSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSyncService.swift; sourceTree = "<group>"; };
+		EFFC239FB151BAFF2FB42A8B /* CalendarTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTimelineView.swift; sourceTree = "<group>"; };
+		F8948D0376E1200AF3F3F429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +99,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D1B1EAB6D5D05400855725A2 /* MainGroup */ = {
+		08F2B11015FBC67D4FCCAD09 = {
 			isa = PBXGroup;
 			children = (
-				DBCE7FDB5DAC34607F07D31B,
+				8D879FDF7CD3605765D1490E /* EventKit.framework */,
+				1FDAFC4D0C5212A785C19DB0 /* UserNotifications.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		634BD6D5C3D7187D5C6C8771 /* GarbageAdd */ = {
+			isa = PBXGroup;
+			children = (
+				64E85F87E8B778595BF290CB /* GarbageAddView.swift */,
+			);
+			path = GarbageAdd;
+			sourceTree = "<group>";
+		};
+		8FF1EDFA919793F073E18EC7 /* GarbageList */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E7F31ED68559883D3A66A /* GarbageListView.swift */,
+			);
+			path = GarbageList;
+			sourceTree = "<group>";
+		};
+		97DC6EF50636D17F1732541F /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				122C4F556C729F5DD0E1ED95 /* FeedbackView.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		9A80E9CF3063B0AA1B9CE248 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				EFFC239FB151BAFF2FB42A8B /* CalendarTimelineView.swift */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		B0D194E680229EC86D74432D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				49D55FE0585E0031CFD5C93C /* GarbageTypeBadgeView.swift */,
+				411B7970FCDF2B2408506F48 /* SelectablePillView.swift */,
+				5F48192FAD91A931621AB008 /* BannerAdView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B879358E0122ADB25F226773 = {
+			isa = PBXGroup;
+			children = (
+				14EFBA0865F67669E2D4717B /* Gomiman.app */,
+			);
+			sourceTree = "<group>";
+		};
+		BC8E6A5FDB0FEE50AF1B10E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45F37F945E25823D66C8D7C6 /* GarbageType.swift */,
+				9EAD4F3107CB41AB61059438 /* GarbageCollectionModel.swift */,
+				AA6BCA6A9F01272BE25E0D3A /* PushSettingModel.swift */,
+				4B5CBFB183B8DA5E1F07E500 /* UserInfoModel.swift */,
+				60A85A94B775B26FC8BAEA88 /* TimelineItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C5F2C1D2B690803658164073 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A14743A110C85F4A545B6FF9 /* DateUtils.swift */,
+				A02DC0C9AA45657003A1D176 /* Color+Theme.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D1471D1157E36258FFD0261B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5C99616319A02F0032945C85 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D1B1EAB6D5D05400855725A2 = {
+			isa = PBXGroup;
+			children = (
+				DBCE7FDB5DAC34607F07D31B /* Gomiman */,
 				08F2B11015FBC67D4FCCAD09,
 				B879358E0122ADB25F226773,
 			);
@@ -111,158 +197,72 @@
 		DBCE7FDB5DAC34607F07D31B /* Gomiman */ = {
 			isa = PBXGroup;
 			children = (
-				3EAA22E054525310896BEA74,
-				BC8E6A5FDB0FEE50AF1B10E7,
-				C5F2C1D2B690803658164073,
-				FA1196890D421541891D17B1,
-				F3533A2279EAD65233E99B38,
-				F867080DDDCAA8CC74A91BE2,
-				99E2C10C99C3AE255D026823,
-				F8948D0376E1200AF3F3F429,
-				999421A664F6B9476F9A19A9,
+				3EAA22E054525310896BEA74 /* GomimanApp.swift */,
+				BC8E6A5FDB0FEE50AF1B10E7 /* Models */,
+				C5F2C1D2B690803658164073 /* Utils */,
+				FA1196890D421541891D17B1 /* Services */,
+				F3533A2279EAD65233E99B38 /* ViewModels */,
+				F867080DDDCAA8CC74A91BE2 /* Views */,
+				99E2C10C99C3AE255D026823 /* Assets.xcassets */,
+				F8948D0376E1200AF3F3F429 /* Info.plist */,
+				999421A664F6B9476F9A19A9 /* GoogleService-Info.plist */,
 			);
-			path = "Gomiman";
-			sourceTree = "<group>";
-		};
-		BC8E6A5FDB0FEE50AF1B10E7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				45F37F945E25823D66C8D7C6,
-				9EAD4F3107CB41AB61059438,
-				AA6BCA6A9F01272BE25E0D3A,
-				4B5CBFB183B8DA5E1F07E500,
-				60A85A94B775B26FC8BAEA88,
-			);
-			path = "Models";
-			sourceTree = "<group>";
-		};
-		C5F2C1D2B690803658164073 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				A14743A110C85F4A545B6FF9,
-				A02DC0C9AA45657003A1D176,
-			);
-			path = "Utils";
-			sourceTree = "<group>";
-		};
-		FA1196890D421541891D17B1 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				8F0161BD24D3BFE169683DDA,
-				1E7681432E3F0558B8EE5AC0,
-				1EEDED3A45AF22C56EE6CAFD,
-				6DE91BEA0944EC8DF53DB7F0,
-				541FE271A6BDBBC1AB4FE28F,
-				40879335C3587573CC16A40C,
-				E7CAC9832712327DECE90F63,
-				B42B865E25F96250540DA4D3,
-			);
-			path = "Services";
-			sourceTree = "<group>";
-		};
-		F3533A2279EAD65233E99B38 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				908529337F2DB468DC2D6751,
-			);
-			path = "ViewModels";
-			sourceTree = "<group>";
-		};
-		F867080DDDCAA8CC74A91BE2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				6A03003FCA8016363FB7003C,
-				B0D194E680229EC86D74432D,
-				9A80E9CF3063B0AA1B9CE248,
-				8FF1EDFA919793F073E18EC7,
-				634BD6D5C3D7187D5C6C8771,
-				DC857B384AB32E251BD5CC83,
-				F1C5EC97A7BB5BB3C95AE10F,
-				D1471D1157E36258FFD0261B,
-				97DC6EF50636D17F1732541F,
-			);
-			path = "Views";
-			sourceTree = "<group>";
-		};
-		B0D194E680229EC86D74432D /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				49D55FE0585E0031CFD5C93C,
-				411B7970FCDF2B2408506F48,
-				5F48192FAD91A931621AB008,
-			);
-			path = "Components";
-			sourceTree = "<group>";
-		};
-		9A80E9CF3063B0AA1B9CE248 /* Timeline */ = {
-			isa = PBXGroup;
-			children = (
-				EFFC239FB151BAFF2FB42A8B,
-			);
-			path = "Timeline";
-			sourceTree = "<group>";
-		};
-		8FF1EDFA919793F073E18EC7 /* GarbageList */ = {
-			isa = PBXGroup;
-			children = (
-				7C9E7F31ED68559883D3A66A,
-			);
-			path = "GarbageList";
-			sourceTree = "<group>";
-		};
-		634BD6D5C3D7187D5C6C8771 /* GarbageAdd */ = {
-			isa = PBXGroup;
-			children = (
-				64E85F87E8B778595BF290CB,
-			);
-			path = "GarbageAdd";
+			path = Gomiman;
 			sourceTree = "<group>";
 		};
 		DC857B384AB32E251BD5CC83 /* PushSettings */ = {
 			isa = PBXGroup;
 			children = (
-				394AFF31D0FA560F1DDA086C,
+				394AFF31D0FA560F1DDA086C /* PushSettingView.swift */,
 			);
-			path = "PushSettings";
+			path = PushSettings;
 			sourceTree = "<group>";
 		};
 		F1C5EC97A7BB5BB3C95AE10F /* CalendarAppend */ = {
 			isa = PBXGroup;
 			children = (
-				A4ED5CC8C1A69D1D124ECA0E,
+				A4ED5CC8C1A69D1D124ECA0E /* CalendarAppendView.swift */,
 			);
-			path = "CalendarAppend";
+			path = CalendarAppend;
 			sourceTree = "<group>";
 		};
-		D1471D1157E36258FFD0261B /* Settings */ = {
+		F3533A2279EAD65233E99B38 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				5C99616319A02F0032945C85,
+				908529337F2DB468DC2D6751 /* GarbageViewModel.swift */,
 			);
-			path = "Settings";
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		97DC6EF50636D17F1732541F /* Feedback */ = {
+		F867080DDDCAA8CC74A91BE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				122C4F556C729F5DD0E1ED95,
+				6A03003FCA8016363FB7003C /* MainTabView.swift */,
+				B0D194E680229EC86D74432D /* Components */,
+				9A80E9CF3063B0AA1B9CE248 /* Timeline */,
+				8FF1EDFA919793F073E18EC7 /* GarbageList */,
+				634BD6D5C3D7187D5C6C8771 /* GarbageAdd */,
+				DC857B384AB32E251BD5CC83 /* PushSettings */,
+				F1C5EC97A7BB5BB3C95AE10F /* CalendarAppend */,
+				D1471D1157E36258FFD0261B /* Settings */,
+				97DC6EF50636D17F1732541F /* Feedback */,
 			);
-			path = "Feedback";
+			path = Views;
 			sourceTree = "<group>";
 		};
-		08F2B11015FBC67D4FCCAD09 /* Frameworks */ = {
+		FA1196890D421541891D17B1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8D879FDF7CD3605765D1490E,
-				1FDAFC4D0C5212A785C19DB0,
+				8F0161BD24D3BFE169683DDA /* PreferencesManager.swift */,
+				1E7681432E3F0558B8EE5AC0 /* CalendarManager.swift */,
+				1EEDED3A45AF22C56EE6CAFD /* NotificationManager.swift */,
+				6DE91BEA0944EC8DF53DB7F0 /* UserInfoCollector.swift */,
+				541FE271A6BDBBC1AB4FE28F /* SyncService.swift */,
+				40879335C3587573CC16A40C /* AppCheckManager.swift */,
+				E7CAC9832712327DECE90F63 /* FirestoreSyncService.swift */,
+				B42B865E25F96250540DA4D3 /* FCMManager.swift */,
 			);
-			sourceTree = "<group>";
-		};
-		B879358E0122ADB25F226773 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				14EFBA0865F67669E2D4717B,
-			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,7 +320,7 @@
 				530806C85F68727FE6FEA02C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
-			productRefGroup = B879358E0122ADB25F226773 /* Products */;
+			productRefGroup = B879358E0122ADB25F226773;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -379,49 +379,33 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		530806C85F68727FE6FEA02C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.0.0;
-			};
-		};
-		6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		99D825E4A2C569EA242F083A /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 530806C85F68727FE6FEA02C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
-		};
-		A868646A77EE5286D677FF14 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		0C84B2BAD766C72614C15960 /* FirebaseAppCheck */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAppCheck;
-		};
-		7E6F3F0895EB75CFB0829CDE /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-/* End XCSwiftPackageProductDependency section */
-
 /* Begin XCBuildConfiguration section */
+		2672D41866B890189EA4D168 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 83PU5Y4R3F;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Gomiman/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.1;
+				PRODUCT_BUNDLE_IDENTIFIER = co.jp.bms.gomiman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		AC2BF1911B8C061B5D76E70B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -482,6 +466,32 @@
 			};
 			name = Debug;
 		};
+		AF419746B51A97135B3CE667 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 83PU5Y4R3F;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Gomiman/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.1;
+				PRODUCT_BUNDLE_IDENTIFIER = co.jp.bms.gomiman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		E10CA6A108079244E3DBD216 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -530,74 +540,15 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = "wholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		2672D41866B890189EA4D168 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_ASSET_PATHS = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Gomiman/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.jp.kpbr.gomiman";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1";
-			};
-			name = Debug;
-		};
-		AF419746B51A97135B3CE667 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_ASSET_PATHS = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Gomiman/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.jp.kpbr.gomiman";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C14C0C736CE4D31A7ECF35C9 /* Build configuration list for PBXProject "Gomiman" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC2BF1911B8C061B5D76E70B /* Debug */,
-				E10CA6A108079244E3DBD216 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A24E63F991640AA2E40120B7 /* Build configuration list for PBXNativeTarget "Gomiman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -607,8 +558,58 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C14C0C736CE4D31A7ECF35C9 /* Build configuration list for PBXProject "Gomiman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC2BF1911B8C061B5D76E70B /* Debug */,
+				E10CA6A108079244E3DBD216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		530806C85F68727FE6FEA02C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+		6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C84B2BAD766C72614C15960 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		7E6F3F0895EB75CFB0829CDE /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		99D825E4A2C569EA242F083A /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 530806C85F68727FE6FEA02C /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		A868646A77EE5286D677FF14 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E0781D51BFE97F5D912844B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 25BCAE05F6D4EFEC06F26763 /* Project object */;
 }

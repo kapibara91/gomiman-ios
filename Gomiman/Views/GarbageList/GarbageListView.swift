@@ -5,6 +5,7 @@ public struct GarbageListView: View {
     @State private var showingAddSheet = false
     @State private var showingPushSettings = false
     @State private var scheduleToDelete: GarbageCollectionModel? = nil
+    @State private var isDeleting: Bool = false
 
     public init() {}
 
@@ -66,19 +67,26 @@ public struct GarbageListView: View {
                 "収集日の削除",
                 isPresented: Binding(
                     get: { scheduleToDelete != nil },
-                    set: { if !$0 { scheduleToDelete = nil } }
+                    set: { if !$0 && !isDeleting { scheduleToDelete = nil } }
                 ),
                 titleVisibility: .visible
             ) {
                 Button("削除する", role: .destructive) {
+                    guard !isDeleting else { return }
+                    isDeleting = true
                     if let id = scheduleToDelete?.id {
                         viewModel.deleteGarbageCollection(id: id)
                     }
                     scheduleToDelete = nil
+                    isDeleting = false
                 }
+                .disabled(isDeleting)
                 Button("キャンセル", role: .cancel) {
-                    scheduleToDelete = nil
+                    if !isDeleting {
+                        scheduleToDelete = nil
+                    }
                 }
+                .disabled(isDeleting)
             } message: {
                 Text("この収集設定を削除しますか？")
             }

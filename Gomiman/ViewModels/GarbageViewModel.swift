@@ -74,6 +74,18 @@ public final class GarbageViewModel {
 
     public func addGarbageCollection(_ model: GarbageCollectionModel) {
         var updatedList = garbageModels
+
+        // Deduplication safety check: if an identical item already exists, do not re-insert
+        let isDuplicate = updatedList.contains { existing in
+            existing.weekStatus == model.weekStatus &&
+            existing.weeks.sorted() == model.weeks.sorted() &&
+            existing.days.sorted() == model.days.sorted() &&
+            existing.garbageTypes.sorted() == model.garbageTypes.sorted()
+        }
+        if isDuplicate {
+            return
+        }
+
         let maxId = updatedList.compactMap { $0.id }.max() ?? 0
         let newId = maxId + 1
         let newVersion = preferencesManager.updateGarbageScheduleVersion()

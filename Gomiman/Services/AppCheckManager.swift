@@ -22,6 +22,13 @@ public final class AppCheckManager: @unchecked Sendable {
 
         #if canImport(FirebaseAppCheck)
         #if DEBUG
+        let envToken = ProcessInfo.processInfo.environment["AppCheckDebugToken"]
+            ?? ProcessInfo.processInfo.environment["FIRAAppCheckDebugToken"]
+        if let token = envToken {
+            print("[AppCheckManager] Using AppCheckDebugToken from environment: \(token)")
+        } else {
+            print("[AppCheckManager] No AppCheckDebugToken in environment, Firebase will auto-generate one.")
+        }
         let providerFactory = AppCheckDebugProviderFactory()
         AppCheck.setAppCheckProviderFactory(providerFactory)
         print("[AppCheckManager] Initialized with AppCheckDebugProviderFactory")

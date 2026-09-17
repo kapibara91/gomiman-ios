@@ -5,10 +5,18 @@ public struct SettingsView: View {
 
     @State private var showingCalendarResetAlert = false
     @State private var showingGarbageResetAlert = false
-    @State private var alertMessage = ""
+    @State private var isResettingEvents = false
+    @State private var isResettingGarbage = false
+    @State private var showingCompletionAlert = false
+    @State private var completionAlertTitle = ""
+    @State private var completionAlertMessage = ""
     @State private var showingFeedback = false
     @State private var showingPushSettings = false
     @State private var showingCalendarAppend = false
+
+    private var appVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.5.1"
+    }
 
     private let calendarManager = CalendarManager.shared
 
@@ -34,7 +42,7 @@ public struct SettingsView: View {
                         .font(.system(size: 26, weight: .bold))
                         .foregroundColor(.defaultTheme)
 
-                    Text("Ver 1.5.0")
+                    Text("Ver \(appVersion)")
                         .font(.system(size: 14))
                         .foregroundColor(.customTextSecondary)
 
@@ -101,22 +109,42 @@ public struct SettingsView: View {
             }
             .alert("カレンダー予定の削除", isPresented: $showingCalendarResetAlert) {
                 Button("削除", role: .destructive) {
+                    guard !isResettingEvents else { return }
+                    isResettingEvents = true
                     Task {
                         let count = await calendarManager.resetEvents()
-                        alertMessage = count > 0 ? "カレンダーの予定を\(count)件削除しました。" : "削除対象のカレンダー予定がありませんでした。"
+                        isResettingEvents = false
+                        completionAlertTitle = "カレンダー予定の削除"
+                        completionAlertMessage = count > 0 ? "カレンダーの予定を\(count)件削除しました。" : "削除対象のカレンダー予定がありませんでした。"
+                        showingCompletionAlert = true
                     }
                 }
+                .disabled(isResettingEvents)
                 Button("キャンセル", role: .cancel) {}
+                .disabled(isResettingEvents)
             } message: {
                 Text("端末のカレンダーから、ゴミマンが登録した収集予定をすべて削除します。\nよろしいですか？")
             }
             .alert("ごみ収集日のリセット", isPresented: $showingGarbageResetAlert) {
                 Button("リセット", role: .destructive) {
+                    guard !isResettingGarbage else { return }
+                    isResettingGarbage = true
                     viewModel.resetAllGarbageCollections()
+                    isResettingGarbage = false
+                    completionAlertTitle = "ごみ収集日のリセット"
+                    completionAlertMessage = "ごみ収集日をリセットしました。"
+                    showingCompletionAlert = true
                 }
+                .disabled(isResettingGarbage)
                 Button("キャンセル", role: .cancel) {}
+                .disabled(isResettingGarbage)
             } message: {
                 Text("登録されているすべての収集日設定が削除されます。\nリセットしてもよろしいですか？")
+            }
+            .alert(completionAlertTitle, isPresented: $showingCompletionAlert) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(completionAlertMessage)
             }
         }
     }
@@ -147,7 +175,7 @@ public struct SettingsView: View {
     }
 
     private func openAppStoreReview() {
-        // Direct App Store URL for bundle co.jp.kpbr.gomiman
+        // Direct App Store URL for bundle co.jp.bms.gomiman
         if let url = URL(string: "https://apps.apple.com/app/id6740049444?action=write-review") {
             UIApplication.shared.open(url)
         }

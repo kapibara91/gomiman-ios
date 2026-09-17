@@ -11,6 +11,7 @@ public struct GarbageAddView: View {
 
     @State private var validationError: String? = nil
     @State private var showingAlert = false
+    @State private var isSaving = false
 
     public init() {}
 
@@ -160,16 +161,23 @@ public struct GarbageAddView: View {
                     Button("キャンセル") {
                         dismiss()
                     }
-                    .foregroundColor(.defaultTheme)
+                    .foregroundColor(isSaving ? .defaultTheme.opacity(0.5) : .defaultTheme)
                     .font(.system(size: 15))
+                    .disabled(isSaving)
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("保存") {
-                        save()
+                    Button(action: { save() }) {
+                        if isSaving {
+                            ProgressView()
+                                .tint(.defaultTheme)
+                        } else {
+                            Text("保存")
+                                .foregroundColor(.defaultTheme)
+                                .font(.system(size: 15, weight: .bold))
+                        }
                     }
-                    .foregroundColor(.defaultTheme)
-                    .font(.system(size: 15, weight: .bold))
+                    .disabled(isSaving)
                 }
             }
             .alert("入力内容の確認", isPresented: $showingAlert) {
@@ -189,6 +197,7 @@ public struct GarbageAddView: View {
     }
 
     private func save() {
+        if isSaving { return }
         if weekStatus == GarbageCollectionModel.weekStatusBiweekly && selectedWeeks.isEmpty {
             validationError = "週を選択してください"
             showingAlert = true
@@ -205,6 +214,7 @@ public struct GarbageAddView: View {
             return
         }
 
+        isSaving = true
         let model = GarbageCollectionModel(
             weekStatus: weekStatus,
             weeks: selectedWeeks.sorted(),

@@ -14,8 +14,13 @@ public final class FirestoreSyncService: @unchecked Sendable {
 
     private init() {}
 
+    private func ensureFirebaseConfigured() {
+        FirebaseInitializer.configureIfNeeded()
+    }
+
     /// Sync user and device metadata to Firestore collection 'users'
     public func syncBaseInfo(_ userInfo: UserInfoModel) async -> Result<Void, Error> {
+        ensureFirebaseConfigured()
         guard let docId = userInfo.deviceUniqueId, !docId.isEmpty else {
             return .failure(NSError(domain: "FirestoreSyncService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Device ID cannot be empty"]))
         }
@@ -59,6 +64,7 @@ public final class FirestoreSyncService: @unchecked Sendable {
 
     /// Sync refreshed FCM Token to Firestore collection 'users'
     public func syncFCMToken(_ token: String) async -> Result<Void, Error> {
+        ensureFirebaseConfigured()
         let docId = PreferencesManager.shared.getOrCreateDeviceUniqueId()
 
         #if canImport(FirebaseFirestore)
@@ -83,6 +89,7 @@ public final class FirestoreSyncService: @unchecked Sendable {
 
     /// Direct fallback write of garbage schedule to Firestore
     public func syncGarbageSettingDirectly(collections: [GarbageCollectionModel], version: Int64) async -> Result<Void, Error> {
+        ensureFirebaseConfigured()
         let docId = PreferencesManager.shared.getOrCreateDeviceUniqueId()
 
         #if canImport(FirebaseFirestore)
@@ -91,6 +98,7 @@ public final class FirestoreSyncService: @unchecked Sendable {
             let data: [String: Any] = [
                 "userGarbageInfo": collections.map { $0.toDictionary() },
                 "version": version,
+                "scheduleVersion": version,
                 "garbageVersion": version,
                 "updatedAt": FieldValue.serverTimestamp()
             ]
@@ -110,6 +118,7 @@ public final class FirestoreSyncService: @unchecked Sendable {
 
     /// Submit feedback to Firestore collection 'feedback'
     public func submitFeedback(message: String) async -> Result<Void, Error> {
+        ensureFirebaseConfigured()
         let docId = PreferencesManager.shared.getOrCreateDeviceUniqueId()
         let userInfo = UserInfoCollector.collect()
 

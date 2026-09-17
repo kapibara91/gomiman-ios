@@ -8,6 +8,7 @@ public struct PushSettingView: View {
     @State private var selectedTimeDayBefore: Int = 1
     @State private var collectionDayAfter: Bool = false
     @State private var selectedTimeDayAfter: Int = 0
+    @State private var isSaving: Bool = false
 
     private let timesBefore = ["19:00", "20:00", "21:00", "22:00", "23:00"]
     private let timesAfter = ["05:00", "06:00", "07:00", "08:00", "09:00"]
@@ -90,11 +91,17 @@ public struct PushSettingView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
-                Button("保存") {
-                    save()
+                Button(action: { save() }) {
+                    if isSaving {
+                        ProgressView()
+                            .tint(.defaultTheme)
+                    } else {
+                        Text("保存")
+                            .foregroundColor(.defaultTheme)
+                            .font(.system(size: 15, weight: .bold))
+                    }
                 }
-                .foregroundColor(.defaultTheme)
-                .font(.system(size: 15, weight: .bold))
+                .disabled(isSaving)
             }
         }
         .task {
@@ -110,6 +117,8 @@ public struct PushSettingView: View {
     }
 
     private func save() {
+        guard !isSaving else { return }
+        isSaving = true
         let updated = PushSettingModel(
             collectionDayBefore: collectionDayBefore,
             selectedTimeDayBefore: selectedTimeDayBefore,

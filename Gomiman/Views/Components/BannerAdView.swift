@@ -4,6 +4,9 @@ import GoogleMobileAds
 #endif
 
 public enum AdConstants {
+    // 暂时关闭广告（用于商店截图等场景），截图完成后改回 true 即可恢复
+    public static let showAds: Bool = false
+
     /// Official Google AdMob Test Banner Unit ID for iOS
     public static let testBannerAdUnitId = "ca-app-pub-3940256099942544/2934735716"
 
@@ -37,21 +40,24 @@ public struct BannerAdView: View {
         self.adUnitId = adUnitId
     }
 
+    @ViewBuilder
     public var body: some View {
-        HStack {
-            Spacer()
-            #if canImport(GoogleMobileAds)
-            BannerAdRepresentable(adUnitId: adUnitId)
-                .frame(width: 320, height: 50)
-            #else
-            Rectangle()
-                .fill(Color.white)
-                .frame(width: 320, height: 50)
-            #endif
-            Spacer()
+        if AdConstants.showAds {
+            HStack {
+                Spacer()
+                #if canImport(GoogleMobileAds)
+                BannerAdRepresentable(adUnitId: adUnitId)
+                    .frame(width: 320, height: 50)
+                #else
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(width: 320, height: 50)
+                #endif
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            .background(Color.white)
         }
-        .frame(maxWidth: .infinity)
-        .background(Color.white)
     }
 }
 

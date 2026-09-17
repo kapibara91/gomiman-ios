@@ -10,18 +10,34 @@ import FirebaseCore
 import FirebaseMessaging
 #endif
 
+public enum FirebaseInitializer: @unchecked Sendable {
+    private static let lock = NSLock()
+    nonisolated(unsafe) private static var isConfigured = false
+
+    public static func configureIfNeeded() {
+        lock.lock()
+        defer { lock.unlock() }
+
+        guard !isConfigured else { return }
+
+        #if canImport(FirebaseAppCheck)
+        AppCheckManager.shared.initialize()
+        #endif
+
+        #if canImport(FirebaseCore)
+        FirebaseApp.configure()
+        #endif
+
+        isConfigured = true
+    }
+}
+
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        #if canImport(FirebaseCore)
-        if FirebaseApp.app() == nil {
-            FirebaseApp.configure()
-        }
-        #endif
-
-        AppCheckManager.shared.initialize()
+        FirebaseInitializer.configureIfNeeded()
         FCMManager.shared.configure()
 
         #if canImport(GoogleMobileAds)
@@ -47,6 +63,17 @@ struct GomimanApp: App {
     @State private var viewModel = GarbageViewModel()
 
     init() {
+        // 1. Initialize Firebase App Check & FirebaseApp safely
+        FirebaseInitializer.configureIfNeeded()
+
+        // 2. Configure FCM delegate
+        FCMManager.shared.configure()
+
+        // 3. Initialize Google Mobile Ads SDK
+        #if canImport(GoogleMobileAds)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        #endif
+
         // Configure native navigation bar appearance to match clean white styling
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
