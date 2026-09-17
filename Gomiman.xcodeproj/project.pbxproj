@@ -12,7 +12,6 @@
 		18608C3002A8AFB851BB25C9 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C4F556C729F5DD0E1ED95 /* FeedbackView.swift */; };
 		19FBAC5CA4FE897B76F61C4D /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02DC0C9AA45657003A1D176 /* Color+Theme.swift */; };
 		1A777CFA0271C4E6F4DC32D8 /* GomimanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA22E054525310896BEA74 /* GomimanApp.swift */; };
-		2463603DE948F8BCA5692F78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 999421A664F6B9476F9A19A9 /* GoogleService-Info.plist */; };
 		2658B8914BA337551C858078 /* GarbageTypeBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D55FE0585E0031CFD5C93C /* GarbageTypeBadgeView.swift */; };
 		267BEC6C1DFFFFA4F8CDA510 /* TimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A85A94B775B26FC8BAEA88 /* TimelineItem.swift */; };
 		2DC1E0CDB06334F75538E4BC /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 0C84B2BAD766C72614C15960 /* FirebaseAppCheck */; };
@@ -38,6 +37,7 @@
 		BBCF0EFCE676A9DB5C5FAEBD /* FCMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B865E25F96250540DA4D3 /* FCMManager.swift */; };
 		D5AC91CEF96A6D54D46B6E00 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 99D825E4A2C569EA242F083A /* GoogleMobileAds */; };
 		DE95CDCC60BAB9E0D147AAE2 /* GarbageCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAD4F3107CB41AB61059438 /* GarbageCollectionModel.swift */; };
+		DECC34D6305C276B00DFF539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DECC34D5305C276A00DFF539 /* GoogleService-Info.plist */; };
 		E0A0C30F334CB3F59FE8FD28 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7E6F3F0895EB75CFB0829CDE /* FirebaseMessaging */; };
 		E21A0B1F71CA59EB927E4A7A /* GarbageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908529337F2DB468DC2D6751 /* GarbageViewModel.swift */; };
 		EF70D701F8D5968692BF6202 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541FE271A6BDBBC1AB4FE28F /* SyncService.swift */; };
@@ -69,7 +69,6 @@
 		8D879FDF7CD3605765D1490E /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		8F0161BD24D3BFE169683DDA /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		908529337F2DB468DC2D6751 /* GarbageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarbageViewModel.swift; sourceTree = "<group>"; };
-		999421A664F6B9476F9A19A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99E2C10C99C3AE255D026823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EAD4F3107CB41AB61059438 /* GarbageCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarbageCollectionModel.swift; sourceTree = "<group>"; };
 		A02DC0C9AA45657003A1D176 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		A4ED5CC8C1A69D1D124ECA0E /* CalendarAppendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAppendView.swift; sourceTree = "<group>"; };
 		AA6BCA6A9F01272BE25E0D3A /* PushSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSettingModel.swift; sourceTree = "<group>"; };
 		B42B865E25F96250540DA4D3 /* FCMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMManager.swift; sourceTree = "<group>"; };
+		DECC34D5305C276A00DFF539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7CAC9832712327DECE90F63 /* FirestoreSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSyncService.swift; sourceTree = "<group>"; };
 		EFFC239FB151BAFF2FB42A8B /* CalendarTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTimelineView.swift; sourceTree = "<group>"; };
 		F8948D0376E1200AF3F3F429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 				F867080DDDCAA8CC74A91BE2 /* Views */,
 				99E2C10C99C3AE255D026823 /* Assets.xcassets */,
 				F8948D0376E1200AF3F3F429 /* Info.plist */,
-				999421A664F6B9476F9A19A9 /* GoogleService-Info.plist */,
+				DECC34D5305C276A00DFF539 /* GoogleService-Info.plist */,
 			);
 			path = Gomiman;
 			sourceTree = "<group>";
@@ -334,7 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2463603DE948F8BCA5692F78 /* GoogleService-Info.plist in Resources */,
+				DECC34D6305C276B00DFF539 /* GoogleService-Info.plist in Resources */,
 				96B4536E9DF2DEE4DA6A006A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +392,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Gomiman/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ゴミマン";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,6 +479,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Gomiman/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ゴミマン";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

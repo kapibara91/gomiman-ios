@@ -29,12 +29,27 @@ public struct SettingsView: View {
                     Spacer().frame(height: 16)
 
                     // App Icon & Info
-                    Image("icon_1024")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 120, height: 120)
-                        .clipShape(RoundedRectangle(cornerRadius: 24))
-                        .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 4)
+                    Group {
+                        if UIImage(named: "AppLogo") != nil {
+                            Image("AppLogo")
+                                .resizable()
+                        } else if let appIcon = Bundle.main.appIcon {
+                            Image(uiImage: appIcon)
+                                .resizable()
+                        } else {
+                            Image(systemName: "trash.circle.fill")
+                                .resizable()
+                                .foregroundColor(.defaultTheme)
+                        }
+                    }
+                    .scaledToFit()
+                    .frame(width: 88, height: 88)
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .stroke(Color.black.opacity(0.06), lineWidth: 0.5)
+                    )
+                    .shadow(color: Color.black.opacity(0.08), radius: 10, x: 0, y: 4)
 
                     Spacer().frame(height: 14)
 
@@ -179,5 +194,25 @@ public struct SettingsView: View {
         if let url = URL(string: "https://apps.apple.com/app/id6740049444?action=write-review") {
             UIApplication.shared.open(url)
         }
+    }
+}
+
+private extension Bundle {
+    var appIcon: UIImage? {
+        if let icons = infoDictionary?["CFBundleIcons"] as? [String: Any],
+           let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
+           let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
+           let lastIcon = iconFiles.last,
+           let image = UIImage(named: lastIcon) {
+            return image
+        }
+        if let icons = infoDictionary?["CFBundleIcons~ipad"] as? [String: Any],
+           let primaryIcon = icons["CFBundlePrimaryIcon"] as? [String: Any],
+           let iconFiles = primaryIcon["CFBundleIconFiles"] as? [String],
+           let lastIcon = iconFiles.last,
+           let image = UIImage(named: lastIcon) {
+            return image
+        }
+        return UIImage(named: "AppIcon")
     }
 }
