@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 public enum UserInfoCollector {
-    public static func collect(fcmToken: String? = nil) -> UserInfoModel {
+    @MainActor public static func collect(fcmToken: String? = nil) -> UserInfoModel {
         let deviceId = PreferencesManager.shared.getOrCreateDeviceUniqueId()
         let timeZoneOffsetHours = TimeZone.current.secondsFromGMT() / 3600
 
