@@ -86,7 +86,8 @@ private struct BannerAdRepresentable: UIViewRepresentable {
         Coordinator()
     }
 
-    class Coordinator: NSObject, GADBannerViewDelegate {
+    @MainActor
+    final class Coordinator: NSObject, @preconcurrency GADBannerViewDelegate {
         func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
             #if DEBUG
             print("[AdMob] Banner loaded successfully: \(bannerView.adUnitID ?? "")")

@@ -27,7 +27,7 @@ public final class CloudRunSyncService: SyncServiceProtocol, @unchecked Sendable
 
     /// Syncs base device metadata directly to Firestore 'users' collection
     public func syncBaseInfo() async -> Result<Void, Error> {
-        let userInfo = UserInfoCollector.collect(fcmToken: FCMManager.shared.currentFCMToken)
+        let userInfo = await UserInfoCollector.collect(fcmToken: FCMManager.shared.currentFCMToken)
         return await FirestoreSyncService.shared.syncBaseInfo(userInfo)
     }
 

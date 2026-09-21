@@ -120,7 +120,7 @@ public final class FirestoreSyncService: @unchecked Sendable {
     public func submitFeedback(message: String) async -> Result<Void, Error> {
         ensureFirebaseConfigured()
         let docId = PreferencesManager.shared.getOrCreateDeviceUniqueId()
-        let userInfo = UserInfoCollector.collect()
+        let userInfo = await UserInfoCollector.collect()
 
         #if canImport(FirebaseFirestore)
         do {
