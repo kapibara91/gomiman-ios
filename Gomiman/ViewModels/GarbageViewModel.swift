@@ -7,32 +7,26 @@ import Observation
 public final class GarbageViewModel {
     public var garbageModels: [GarbageCollectionModel] = []
     public var pushSetting: PushSettingModel = PushSettingModel()
-    public var isSynced: Bool = false
     public var scheduleVersion: Int64 = 0
 
     public var timelineItems: [TimelineItem] = []
     public var todayGarbageTypes: [GarbageType] = []
     public var isCollectedToday: Bool = false
-    public var isSyncing: Bool = false
 
     private let preferencesManager: PreferencesManager
     private let notificationManager: NotificationManager
-    private let syncService: SyncServiceProtocol
 
     public init(
         preferencesManager: PreferencesManager = .shared,
-        notificationManager: NotificationManager = .shared,
-        syncService: SyncServiceProtocol = CloudRunSyncService.shared
+        notificationManager: NotificationManager = .shared
     ) {
         self.preferencesManager = preferencesManager
         self.notificationManager = notificationManager
-        self.syncService = syncService
     }
 
     public func loadData() {
         self.garbageModels = preferencesManager.getGarbageCollections()
         self.pushSetting = preferencesManager.getPushSetting()
-        self.isSynced = preferencesManager.isGarbageSettingSynced()
         self.scheduleVersion = preferencesManager.getGarbageScheduleVersion()
 
         recalculateTimeline()
@@ -43,11 +37,6 @@ public final class GarbageViewModel {
                 models: garbageModels,
                 pushSetting: pushSetting
             )
-        }
-
-        // Auto sync if unsynced
-        if !isSynced && !garbageModels.isEmpty {
-            syncWithServer()
         }
     }
 
@@ -97,11 +86,9 @@ public final class GarbageViewModel {
         updatedList.append(newModel)
 
         preferencesManager.saveGarbageCollections(updatedList)
-        preferencesManager.setGarbageSettingSynced(false)
 
         self.garbageModels = updatedList
         self.scheduleVersion = newVersion
-        self.isSynced = false
 
         recalculateTimeline()
 
@@ -112,7 +99,10 @@ public final class GarbageViewModel {
             )
         }
 
-        syncWithServer()
+        AnalyticsManager.shared.logAddGarbage(
+            types: model.garbageTypes,
+            isEveryWeek: model.weekStatus == GarbageCollectionModel.weekStatusEveryWeek
+        )
     }
 
     public func deleteGarbageCollection(id: Int64) {
@@ -120,11 +110,9 @@ public final class GarbageViewModel {
         let newVersion = preferencesManager.updateGarbageScheduleVersion()
 
         preferencesManager.saveGarbageCollections(updatedList)
-        preferencesManager.setGarbageSettingSynced(false)
 
         self.garbageModels = updatedList
         self.scheduleVersion = newVersion
-        self.isSynced = false
 
         recalculateTimeline()
 
@@ -135,18 +123,16 @@ public final class GarbageViewModel {
             )
         }
 
-        syncWithServer()
+        AnalyticsManager.shared.logDeleteGarbage(id: id)
     }
 
     public func resetAllGarbageCollections() {
         let newVersion = preferencesManager.updateGarbageScheduleVersion()
 
         preferencesManager.saveGarbageCollections([])
-        preferencesManager.setGarbageSettingSynced(false)
 
         self.garbageModels = []
         self.scheduleVersion = newVersion
-        self.isSynced = false
 
         recalculateTimeline()
 
@@ -157,7 +143,7 @@ public final class GarbageViewModel {
             )
         }
 
-        syncWithServer()
+        AnalyticsManager.shared.logResetGarbage()
     }
 
     public func updatePushSetting(_ newSetting: PushSettingModel) {
@@ -173,28 +159,11 @@ public final class GarbageViewModel {
             )
         }
 
-        syncWithServer()
-    }
-
-    public func syncWithServer() {
-        guard !isSyncing else { return }
-        isSyncing = true
-
-        let collections = self.garbageModels
-        let version = self.scheduleVersion
-        let setting = self.pushSetting
-
-        Task {
-            let result = await syncService.syncGarbageSetting(
-                collections: collections,
-                version: version,
-                pushSetting: setting
-            )
-            isSyncing = false
-            if case .success = result {
-                self.isSynced = true
-                self.preferencesManager.setGarbageSettingSynced(true)
-            }
-        }
+        AnalyticsManager.shared.logUpdatePushSetting(
+            dayBefore: newSetting.collectionDayBefore,
+            dayBeforeHour: newSetting.getDayBeforeHour(),
+            dayAfter: newSetting.collectionDayAfter,
+            dayAfterHour: newSetting.getDayAfterHour()
+        )
     }
 }

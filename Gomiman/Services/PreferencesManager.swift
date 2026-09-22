@@ -12,24 +12,11 @@ public final class PreferencesManager: @unchecked Sendable {
         static let timeDayAfter = "_selectedTimeDayAfterKey"
         static let firstTimeAdded = "_firstTimeAddedGarbageKey"
         static let garbageCollectionsJson = "_garbageCollectionsJsonKey"
-        static let garbageIsSynced = "_garbageIsSyncedKey"
         static let garbageScheduleVersion = "_garbageScheduleVersionKey"
-        static let deviceUniqueId = "_deviceUniqueIdKey"
     }
 
     public init(userDefaults: UserDefaults = .standard) {
         self.userDefaults = userDefaults
-    }
-
-    // MARK: - Device Identifier
-
-    public func getOrCreateDeviceUniqueId() -> String {
-        if let id = userDefaults.string(forKey: Keys.deviceUniqueId), !id.isEmpty {
-            return id
-        }
-        let newId = UUID().uuidString
-        userDefaults.set(newId, forKey: Keys.deviceUniqueId)
-        return newId
     }
 
     // MARK: - Push / Reminder Settings
@@ -90,15 +77,7 @@ public final class PreferencesManager: @unchecked Sendable {
         }
     }
 
-    // MARK: - Sync State & Version
-
-    public func isGarbageSettingSynced() -> Bool {
-        return userDefaults.bool(forKey: Keys.garbageIsSynced)
-    }
-
-    public func setGarbageSettingSynced(_ synced: Bool) {
-        userDefaults.set(synced, forKey: Keys.garbageIsSynced)
-    }
+    // MARK: - Version
 
     public func getGarbageScheduleVersion() -> Int64 {
         return Int64(userDefaults.integer(forKey: Keys.garbageScheduleVersion))

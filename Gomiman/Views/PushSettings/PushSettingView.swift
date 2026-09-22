@@ -111,8 +111,8 @@ public struct PushSettingView: View {
             collectionDayAfter = setting.collectionDayAfter
             selectedTimeDayAfter = setting.selectedTimeDayAfter
 
-            // Explicitly request push permission and register for remote notifications ONLY on entering this screen
-            _ = await FCMManager.shared.requestPushPermissionAndRegister()
+            // Request local notification permission on entering this screen
+            _ = await NotificationManager.shared.requestAuthorization()
         }
     }
 

@@ -199,6 +199,7 @@ public struct CalendarAppendView: View {
                     alertTitle = "完了"
                     alertMessage = "\(count)件の予定をカレンダーに登録しました。"
                     registrationSucceeded = true
+                    AnalyticsManager.shared.logCalendarAppend(count: count, periodIndex: eventPeriod)
                 } else {
                     alertTitle = "通知"
                     alertMessage = "選択した期間内に該当するゴミ収集日がありませんでした。"

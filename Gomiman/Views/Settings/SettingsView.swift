@@ -10,7 +10,6 @@ public struct SettingsView: View {
     @State private var showingCompletionAlert = false
     @State private var completionAlertTitle = ""
     @State private var completionAlertMessage = ""
-    @State private var showingFeedback = false
     @State private var showingPushSettings = false
     @State private var showingCalendarAppend = false
 
@@ -92,12 +91,6 @@ public struct SettingsView: View {
                         settingsRow(title: "アプリを評価する") {
                             openAppStoreReview()
                         }
-
-                        rowDivider
-
-                        settingsRow(title: "ご意見・ご要望") {
-                            showingFeedback = true
-                        }
                     }
                     .background(Color.white)
                     .cornerRadius(6)
@@ -119,15 +112,13 @@ public struct SettingsView: View {
             .navigationDestination(isPresented: $showingCalendarAppend) {
                 CalendarAppendView()
             }
-            .navigationDestination(isPresented: $showingFeedback) {
-                FeedbackView()
-            }
             .alert("カレンダー予定の削除", isPresented: $showingCalendarResetAlert) {
                 Button("削除", role: .destructive) {
                     guard !isResettingEvents else { return }
                     isResettingEvents = true
                     Task {
                         let count = await calendarManager.resetEvents()
+                        AnalyticsManager.shared.logCalendarReset(count: count)
                         isResettingEvents = false
                         completionAlertTitle = "カレンダー予定の削除"
                         completionAlertMessage = count > 0 ? "カレンダーの予定を\(count)件削除しました。" : "削除対象のカレンダー予定がありませんでした。"
