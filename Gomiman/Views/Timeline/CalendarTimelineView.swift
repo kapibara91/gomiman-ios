@@ -41,7 +41,6 @@ public struct CalendarTimelineView: View {
                 }
 
                 BannerAdView(adUnitId: AdConstants.getTimelineBannerUnitId())
-                    .padding(.vertical, 4)
             }
             .background(Color.white)
             .navigationDestination(isPresented: $showingCalendarAppend) {

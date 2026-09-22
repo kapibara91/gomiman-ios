@@ -5,7 +5,7 @@ import GoogleMobileAds
 
 public enum AdConstants {
     // 暂时关闭广告（用于商店截图等场景），截图完成后改回 true 即可恢复
-    public static let showAds: Bool = false
+    public static let showAds: Bool = true
 
     /// Official Google AdMob Test Banner Unit ID for iOS
     public static let testBannerAdUnitId = "ca-app-pub-3940256099942544/2934735716"
@@ -43,35 +43,55 @@ public struct BannerAdView: View {
     @ViewBuilder
     public var body: some View {
         if AdConstants.showAds {
-            HStack {
-                Spacer()
-                #if canImport(GoogleMobileAds)
-                BannerAdRepresentable(adUnitId: adUnitId)
-                    .frame(width: 320, height: 50)
-                #else
-                Rectangle()
-                    .fill(Color.white)
-                    .frame(width: 320, height: 50)
-                #endif
-                Spacer()
+            #if canImport(GoogleMobileAds)
+            let width = currentWidth
+            let adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(width)
+
+            VStack(spacing: 0) {
+                Divider()
+                BannerAdRepresentable(adUnitId: adUnitId, adSize: adSize)
+                    .frame(width: adSize.size.width, height: adSize.size.height)
             }
             .frame(maxWidth: .infinity)
             .background(Color.white)
+            #else
+            VStack(spacing: 0) {
+                Divider()
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(height: 50)
+            }
+            .frame(maxWidth: .infinity)
+            #endif
         }
+    }
+
+    @MainActor
+    private var currentWidth: CGFloat {
+        if let windowScene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first(where: { $0.activationState == .foregroundActive }) ?? UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first(where: { $0.isKeyWindow }) ?? windowScene.windows.first {
+            return window.bounds.width
+        }
+        return UIScreen.main.bounds.width
     }
 }
 
 #if canImport(GoogleMobileAds)
 private struct BannerAdRepresentable: UIViewRepresentable {
     let adUnitId: String
+    let adSize: GADAdSize
 
     func makeUIView(context: Context) -> GADBannerView {
-        let bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        let bannerView = GADBannerView(adSize: adSize)
         bannerView.adUnitID = adUnitId
         bannerView.delegate = context.coordinator
 
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let root = windowScene.windows.first?.rootViewController {
+        if let windowScene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first(where: { $0.activationState == .foregroundActive }) ?? UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let root = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController ?? windowScene.windows.first?.rootViewController {
             bannerView.rootViewController = root
         }
 

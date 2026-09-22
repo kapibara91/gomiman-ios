@@ -33,7 +33,6 @@ public struct GarbageListView: View {
                 }
 
                 BannerAdView(adUnitId: AdConstants.getCollectionBannerUnitId())
-                    .padding(.vertical, 4)
             }
             .background(Color.white)
             .navigationTitle("ゴミマン")
